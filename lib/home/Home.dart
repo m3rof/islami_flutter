@@ -14,7 +14,6 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
  int currentindex=0;
-
   @override
   Widget build(BuildContext context) {
     return Container(
