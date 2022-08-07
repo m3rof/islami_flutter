@@ -9,6 +9,7 @@ class Sebha extends StatefulWidget {
 class _SebhaState extends State<Sebha> {
 String counter='0';
 String tasbih='سبحان الله';
+double angle=20;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,9 @@ String tasbih='سبحان الله';
 
             InkWell(
               onTap:IncreaseCounter,
-              child: Image.asset('assets/images/body_sebha_logo.png',width: 150,height: 150,),
+              child: Transform.rotate(
+                  angle: angle,
+                  child: Image.asset('assets/images/body_sebha_logo.png',width: 150,height: 150,)),
             ),
             SizedBox(height: 30,),
             Text('عدد التسبيحات',style: TextStyle(fontSize: 25,fontWeight: FontWeight.w500),),
@@ -66,6 +69,7 @@ String tasbih='سبحان الله';
    counterint++;
    counter=counterint.toString();
    TasbihString();
+   angle=angle*20;
    setState(() {});
   }
   void TasbihString(){
