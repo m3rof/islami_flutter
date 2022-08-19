@@ -26,7 +26,7 @@ class _HomeState extends State<Home> {
         backgroundColor: Colors.transparent,
         appBar: AppBar(
           backgroundColor: Colors.transparent,elevation: 0,
-          title:Text('islami',style: TextStyle(color: Colors.black,fontSize: 25),) ,
+          title:Text('إسلامي',style: TextStyle(color: Colors.black,fontSize: 25),) ,
           centerTitle: true,
         ),
         bottomNavigationBar: Theme(

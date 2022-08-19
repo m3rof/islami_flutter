@@ -136,7 +136,7 @@ class Quran extends StatelessWidget {
           Container(
               margin: EdgeInsets.symmetric(vertical: 4),
               child: Text(
-                'Sura Name',
+                'القرآن',
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
               )),
           Divider(
@@ -155,7 +155,7 @@ class Quran extends StatelessWidget {
                       },
                       itemCount: suraNames.length,
                       itemBuilder: (context, index) {
-                        return SuraName(suraNames[index]);
+                        return SuraName(suraNames[index],index);
                       })))
         ],
       ),
