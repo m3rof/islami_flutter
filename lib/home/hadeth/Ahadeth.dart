@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami/home/hadeth/Hadeth_name.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class Ahadeth extends StatefulWidget {
   @override
   State<Ahadeth> createState() => _AhadethState();
@@ -24,7 +24,7 @@ class _AhadethState extends State<Ahadeth> {
             thickness: 2,
           ),
           Text(
-            'أحاديث',
+            AppLocalizations.of(context)!.ahadeth,
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
           ),
           Divider(

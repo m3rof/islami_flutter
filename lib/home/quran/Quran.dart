@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami/home/quran/SuraName.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class Quran extends StatelessWidget {
   List<String> suraNames = [
     "الفاتحه",
@@ -136,7 +136,7 @@ class Quran extends StatelessWidget {
           Container(
               margin: EdgeInsets.symmetric(vertical: 4),
               child: Text(
-                'القرآن',
+                AppLocalizations.of(context)!.quran,
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
               )),
           Divider(
@@ -155,7 +155,7 @@ class Quran extends StatelessWidget {
                       },
                       itemCount: suraNames.length,
                       itemBuilder: (context, index) {
-                        return SuraName(suraNames[index],index);
+                        return SuraName(suraNames[index], index);
                       })))
         ],
       ),

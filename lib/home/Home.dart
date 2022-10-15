@@ -4,7 +4,9 @@ import 'package:islami/home/hadeth/Ahadeth.dart';
 import 'package:islami/home/quran/Quran.dart';
 import 'package:islami/home/radio/RadioIslami.dart';
 import 'package:islami/home/sebha/Sebha.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import 'settings/Settings.dart';
 class Home extends StatefulWidget {
  static String Route_Home='home';
 
@@ -26,8 +28,8 @@ class _HomeState extends State<Home> {
         backgroundColor: Colors.transparent,
         appBar: AppBar(
           backgroundColor: Colors.transparent,elevation: 0,
-          title:Text('إسلامي',style: TextStyle(color: Colors.black,fontSize: 25),) ,
-          centerTitle: true,
+          title:Text(AppLocalizations.of(context)!.islami
+            ,style: TextStyle(color: Colors.black,fontSize: 25),) ,
         ),
         bottomNavigationBar: Theme(
           data: Theme.of(context).copyWith(canvasColor: Color(0xffB7935F)),
@@ -40,10 +42,11 @@ class _HomeState extends State<Home> {
             selectedItemColor: Color(0xff242424),
             iconSize: 30,
             items: [
-              BottomNavigationBarItem(label:'quran',icon:ImageIcon(AssetImage('assets/images/icon_quran.png')) ),
-              BottomNavigationBarItem(label:'hadeth',icon:ImageIcon(AssetImage('assets/images/icon_hadeth.png')) ),
-              BottomNavigationBarItem(label:'sebha',icon:ImageIcon(AssetImage('assets/images/icon_sebha.png')) ),
-              BottomNavigationBarItem(label:'radio',icon:ImageIcon(AssetImage('assets/images/icon_radio.png')) )
+              BottomNavigationBarItem(label:AppLocalizations.of(context)!.quran,icon:ImageIcon(AssetImage('assets/images/icon_quran.png')) ),
+              BottomNavigationBarItem(label:AppLocalizations.of(context)!.ahadeth,icon:ImageIcon(AssetImage('assets/images/icon_hadeth.png')) ),
+              BottomNavigationBarItem(label:AppLocalizations.of(context)!.sebha,icon:ImageIcon(AssetImage('assets/images/icon_sebha.png')) ),
+              BottomNavigationBarItem(label:AppLocalizations.of(context)!.radio,icon:ImageIcon(AssetImage('assets/images/icon_radio.png')) ),
+              BottomNavigationBarItem(label:AppLocalizations.of(context)!.settings,icon:Icon(Icons.settings) ),
             ],
           ),
         ),
@@ -59,8 +62,11 @@ class _HomeState extends State<Home> {
     }
     else if(currentindex==2){
       return Sebha();
-    }else {
+    }else if(currentindex==3){
       return RadioIslami();
+    }
+    else{
+      return Settings();
     }
   }
 }
