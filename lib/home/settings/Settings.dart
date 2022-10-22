@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:islami/home/provider/app_provider.dart';
 import 'package:islami/home/settings/Language_bottom_sheet.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 class Settings extends StatefulWidget {
@@ -12,6 +13,10 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
+  @override
+  void initState() {
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     var provider=Provider.of<AppProvider>(context);
@@ -42,6 +47,7 @@ class _SettingsState extends State<Settings> {
   void ShowLanguageBottomSheet() {
     showModalBottomSheet(context: context, builder:(context) => LanguageBottomSheet(),);
   }
+
 }
 
 

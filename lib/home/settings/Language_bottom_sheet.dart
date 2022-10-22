@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami/home/provider/app_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LanguageBottomSheet extends StatefulWidget {
   @override
@@ -9,15 +10,26 @@ class LanguageBottomSheet extends StatefulWidget {
 
 class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
   @override
-  Widget build(BuildContext context) {
-    var provider=Provider.of<AppProvider>(context);
+  void initState() {
+    super.initState();
+  }
+  @override
+  Widget build(BuildContext context){
+    var provider = Provider.of<AppProvider>(context);
     return Container(
       child: Column(
         children: [
-          InkWell(onTap:() =>provider.changeLanguage('en'),
-              child: getLanguageRow('English', provider.appLanguage=='en'?true:false)),
-          InkWell(onTap: () =>provider.changeLanguage('ar'),
-              child: getLanguageRow('العربية', provider.appLanguage=='ar'?true:false))
+          InkWell(
+              onTap: () {
+                provider.changeLanguage('en');
+              },
+              child: getLanguageRow(
+                  'English', provider.appLanguage == 'en' ? true : false)),
+          InkWell(
+              onTap: ()async{ provider.changeLanguage('ar');
+              },
+              child: getLanguageRow(
+                  'العربية', provider.appLanguage == 'ar' ? true : false))
         ],
       ),
     );
